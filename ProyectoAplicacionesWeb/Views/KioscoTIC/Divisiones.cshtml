@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <link rel="stylesheet" href="~/KiscoTIC/dist/CSS/divisiones.css" />
+}
+<div class="container1">
+    <h1> <img src="~/KiscoTIC/dist/CSS/IMG/triangulo.png"> Seleccione una división </h1>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <a asp-action="DivisionTIC">
+        <container class="division" id="div_TIC">
+            <h2> División TIC.</h2>
+        </container>
+    </a>
+    <a asp-action="DivisionIND">
+        <container class="division" id="div_IND">
+            <h2> División Industrial.</h2>
+        </container>
+    </a>
+    <a asp-action="DivisionMISE">
+        <container class="division" id="div_ADM">
+            <h2> División Administración.</h2>
+        </container>
+    </a>
+</div>

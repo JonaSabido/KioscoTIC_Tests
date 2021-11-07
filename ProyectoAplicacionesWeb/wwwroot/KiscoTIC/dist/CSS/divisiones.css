@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #E7E7E7;
+}
+.container1{
+    background-color: white;
+    height: auto;
+    width: 90%;
+    margin-left: 5%;
+    padding: 100px;
+    box-shadow: 0px 0px 3px black;
+    float: left;
+}
+.container1 h1{
+    padding: 20px;
+    color: black;
+}
+.container1 hr{
+    width: 100%;
+}
+.container1 a{
+    float: left;
+    width: 100%;
+    padding-bottom: 25px;
+}
+.division{
+    float: left;
+    width: 90%;
+    border: 2px black solid;
+    margin-left: 5%;
+    padding: 150px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.container1 .division h2{
+    color: white;
+    text-shadow: 2px 2px 10px black;
+    
+}
+.container1 h1 img{
+    width: 4%;
+}
+#div_TIC{
+    background-image: url(IMG/div_TIC.png);
+    background-size: 100%;
+    background-position: center;
+}
+#div_IND {
+    background-image: url(IMG/div_IND.png);
+    background-size: 100%;
+    background-position: center;
+}
+#div_ADM {
+    background-image: url(IMG/div_ADM.png);
+    background-size: 100%;
+    background-position: center;
+}
+.container1 a:hover .division{
+    box-shadow: 0px 0px 20px #00C605;
+}
+#div_TIC:hover{
+    background-size: 110%;
+}
+#div_ADM:hover{
+    background-size: 110%;
+}
+#div_IND:hover{
+    background-size: 110%;
+}

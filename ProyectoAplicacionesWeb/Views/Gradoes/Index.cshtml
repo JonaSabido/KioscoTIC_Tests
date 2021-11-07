@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ProyectoAplicacionesWeb.Models.Grado>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Grados</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Agregar Nuevo grado</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Grado1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ciclo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grado1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ciclo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Grado1">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Grado1">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Grado1">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

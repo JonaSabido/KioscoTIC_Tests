@@ -1,0 +1,33 @@
+﻿@model ProyectoAplicacionesWeb.Models.Usuario
+@{
+    <title> Login </title>
+    <link rel="stylesheet" href="/KiscoTIC/dist/CSS/estilologin.css" type="text/css">
+    <meta charset="UTF-8">
+}
+
+<div id="containerlogin">
+    <form asp-action="Onpost" method="post">
+        <h1> ¡Bienvenido! </h1>
+        <br>
+        <br>
+        <input type="email" placeholder="Correo Electronico..." class="campos" name="Cor" asp-for="Correo" required>
+        <br>
+        <br>
+        <input type="password" placeholder="Contraseña..." class="campos" name="Contra" asp-for="Contraseña" required>
+        <br>
+        <br>
+        <br>
+        <center><input type="submit" value="Iniciar Sesión" id="btn1"></center>
+        @if(ViewBag.showSuccesAlert == true)
+            {
+                <script>
+                    alert('huevos');
+                </script>
+            }
+        <br>
+        <br>
+    </form>
+</div>
+
+
+

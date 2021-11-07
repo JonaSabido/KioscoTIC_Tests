@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ProyectoAplicacionesWeb.Models.Grupo>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Grupos</h1>
+
+<p>
+    <a asp-action="Create">Agregar Nuevo Grupo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Grupo1)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grupo1)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Grupo1">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Grupo1">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Grupo1">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

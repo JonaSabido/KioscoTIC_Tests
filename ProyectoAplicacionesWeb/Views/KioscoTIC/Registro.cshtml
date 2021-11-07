@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <title> Nombre División </title>
+    <link rel="stylesheet" href="/KiscoTIC/dist/CSS/boostrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/KiscoTIC/dist/CSS/registro.css" type="text/css">
+    <meta charset="UTF-8">
+
+}
+<div id="containerregistro">
+    <form>
+        <h1> Registro </h1>
+        <br>
+        <br>
+        <input type="text" placeholder="Nombre..." class="campos" required>
+        <br>
+        <br>
+        <input type="text" placeholder="Primer Apellido..." class="campos" required> 
+        <br>
+        <br>
+        <input type="text" placeholder="Segundo Apellido..." class="campos" required>
+        <br>
+        <br>
+        <input type="email" placeholder="Correo Electronico..." class="campos" required>
+        <br>
+        <br>
+        <input type="password" placeholder="Contraseña..." class="campos" required>
+        <br>
+        <br>
+        <input type="password" placeholder="Repetir Contraseña..." class="campos" required>
+        <br>
+        <br>
+        <br>
+        <center> <input type="submit" value="Registrarse" id="btn1"></center>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <center><input type="submit" value="Registrarse con Facebook" id="btn2"></center>
+        <br>
+        <br>
+        <center><input type="submit" value="Registrarse con Google" id="btn3"></center>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <a asp-area="" asp-controller="KioscoTIC" asp-action="Login"> ¿Ya tienes una cuenta? </a>
+    </form>
+</div>

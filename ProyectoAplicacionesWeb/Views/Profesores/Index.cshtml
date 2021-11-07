@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ProyectoAplicacionesWeb.Models.Profesore>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Profesores</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Agregar Nuevo Profesor</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClaveDivisionMaestrosNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClaveDivisionMaestrosNavigation.DescripcionDivision)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MatriculaMaestros">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.MatriculaMaestros">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.MatriculaMaestros">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

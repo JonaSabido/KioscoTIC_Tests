@@ -1,0 +1,86 @@
+﻿.banner {
+    margin-top: -.7%;
+    width: 100%;
+    height: auto;
+    background-image: url(IMG/div_ADM.png);
+    background-size: 100%;
+    background-attachment: fixed;
+    float: left;
+    text-align: center;
+}
+
+#container {
+    background-color: white;
+    height: auto;
+    width: 90%;
+    margin-left: 5%;
+    padding: 100px;
+    box-shadow: 0px 0px 3px black;
+    float: left;
+    padding-bottom: 40px;
+}
+
+.banner h1 {
+    color: white;
+    font-size: 300%;
+    text-shadow: 1px 5px 25px black;
+    transition: .3s all ease;
+}
+
+.banner ul {
+    display: inline-flex;
+}
+
+    .banner ul li {
+        display: inline-flex;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .banner ul a {
+        padding: 10px;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+    }
+
+        .banner ul a:hover {
+            color: #00C605;
+            text-decoration: #00C605;
+        }
+
+.container p {
+    text-align: justify;
+}
+
+#container table tr td {
+    border: 2px black solid;
+}
+
+#container .proyectos_division article {
+    width: 25%;
+    padding: 50PX;
+    background-color: #00C605;
+    margin-left: 5%;
+}
+
+#container .proyectos_division {
+    display: flex;
+}
+
+    #container .proyectos_division article h1 {
+        font-size: 150%;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    #container .proyectos_division article a {
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        color: white;
+        text-decoration: none;
+    }

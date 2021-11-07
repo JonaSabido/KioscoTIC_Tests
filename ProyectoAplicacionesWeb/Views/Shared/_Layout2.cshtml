@@ -1,0 +1,29 @@
+﻿
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KioscoTIC</title>
+    <link rel="stylesheet" href="~/KiscoTIC/dist/CSS/boostrap.min.css" />
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    -<partial name="_Navbar" />
+
+    @RenderBody()
+    _<partial name="_Footer" />
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/KiscoTIC/layout/vendor/jquery/jquery.min.js"></script>
+    <script src="~/KiscoTIC/layout/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/KiscoTIC/layout/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/KiscoTIC/layout/js/sb-admin-2.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,130 @@
+﻿@model IEnumerable<ProyectoAplicacionesWeb.Models.Proyecto>
+
+
+<link rel="stylesheet" href="~/KiscoTIC/dist/CSS/proyectos.css" type="text/css">
+
+
+<div id="container">
+    <ul>
+        <li class="li_border"><a href="#tic">Tecnologías </a></li>
+        <li class="li_border"><a href="#ind">Industrial </a></li>
+        <li><a href="#adm">Administración </a></li>
+    </ul>
+    <div id="div1">
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 id="tic">Tecnologías de la Información y Comunicación</h1>
+    <hr>
+    <br>
+    <br>
+    <section class="proyectos_division">
+        @foreach (var item in Model)
+        {
+            @if (item.ClaveDivisionProyectos == 1)
+            {
+        
+            <div class="card" style="width:60%; margin:auto; padding:5px; text-align:center">
+                <h5 class="card-header" style="background-color: black; color: #18BF00"> @Html.DisplayFor(modlItem => item.Nombre) </h5>
+
+                <div class="card-body" padding:5px">
+                    <img src="~/imagenes/@Html.DisplayFor(modlItem => item.Imagen)"/>
+                    <br />
+                    <br />
+                    <h6> @Html.DisplayFor(modelItem => item.ClaveCarreraProyectosNavigation.NombreCarrera) </h6>
+                    <br />
+                        <a class="btn btn-success" style="text-decoration: none; width:50%" asp-action="VerProyecto" asp-route-id="@item.IdProyecto"> Ver Proyecto </a>
+                    
+
+                </div>
+            </div>
+            <br />
+            
+        <br />
+
+
+        
+            }
+        }
+
+     </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 id="ind">Industrial</h1>
+    <hr>
+    <br>
+    <br>
+    <section class="proyectos_division">
+        @foreach (var item in Model)
+        {
+            @if (item.ClaveDivisionProyectos == 2)
+            {
+                <div class="card" style="width:60%; margin:auto; padding:5px; text-align:center">
+                    <h5 class="card-header" style="background-color: black; color: #18BF00"> @Html.DisplayFor(modlItem => item.Nombre) </h5>
+
+                    <div class="card-body" padding:5px">
+                        <img src="~/imagenes/@Html.DisplayFor(modlItem => item.Imagen)" />
+                        <br />
+                        <br />
+                        <h6> @Html.DisplayFor(modelItem => item.ClaveCarreraProyectosNavigation.NombreCarrera) </h6>
+                        <br />
+                        <a class="btn btn-success" style="text-decoration: none; width:50%" asp-action="VerProyecto" asp-route-id="@item.IdProyecto"> Ver Proyecto </a>
+
+
+                    </div>
+                </div>
+                <br />
+
+                <br />
+            }
+        }
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 id="adm">Administración</h1>
+    <hr>
+    <br>
+    <br>
+    <section class="proyectos_division">
+
+        @foreach (var item in Model)
+        {
+            @if (item.ClaveDivisionProyectos == 3)
+            {
+                <div class="card" style="width:60%; margin:auto; padding:5px; text-align:center">
+                    <h5 class="card-header" style="background-color: black; color: #18BF00"> @Html.DisplayFor(modlItem => item.Nombre) </h5>
+
+                    <div class="card-body" padding:5px">
+                        <img src="~/imagenes/@Html.DisplayFor(modlItem => item.Imagen)" />
+                        <br />
+                        <br />
+                        <h6> @Html.DisplayFor(modelItem => item.ClaveCarreraProyectosNavigation.NombreCarrera) </h6>
+                        <br />
+                        <a class="btn btn-success" style="text-decoration: none; width:50%" asp-action="VerProyecto" asp-route-id="@item.IdProyecto"> Ver Proyecto </a>
+
+
+                    </div>
+                </div>
+                <br />
+
+                <br />
+            }
+        }
+    </section>
+    <br>
+    <br>
+    <br>
+</div>

@@ -1,0 +1,22 @@
+﻿@model ProyectoAplicacionesWeb.Models.Grupo
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Eliminar grupo</h1>
+
+<h3>¿Estas seguro de eliminar este grupo?</h3>
+<div>
+    <h4>Grupo</h4>
+    <hr />
+    <dl class="row">
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Grupo1" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Volver a todos los grupos</a>
+    </form>
+</div>

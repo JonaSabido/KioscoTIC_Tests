@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ProyectoAplicacionesWeb.Models.Profesore>
+
+<link rel="stylesheet" href="~/KiscoTIC/dist/CSS/div_TIC.css" />
+<title> Division TIC </title>
+
+<div class="banner">
+    <br><br><br><br><br><br><br><br>
+    <h1> TIC.</h1>
+    <br><br><br><br><br><br><br><br>
+    <ul>
+        <li><a asp-action="Proyectos"> Ver proyectos </a></li>
+        <li><a href="#profesores"> Profesores </a></li>
+        <li><a href="#planes"> Planes de Estudio</a></li>
+    </ul>
+</div>
+<div id="container">
+    <p> La División de Tecnologías de la Información y las Comunicaciones es una dependencia que hace parte de la Vicerrectoría Administrativa y está encargada de promover el desarrollo tecnológico de la Universidad del Cauca, brindando a los usuarios del nivel académico y administrativo soluciones tecnológicas acordes con sus necesidades y en el momento en que las requieran.</p>
+    <br>
+    <br>
+    <br>
+    <h1 id="profesores"> Profesores </h1>
+    <hr>
+    <table width="90%" bgcolor="#00C605" border="2" bordercolor="#00C605" Caption="Mascotas" text-align="center">
+
+        <tr> <td> <b>Nombre</b> </td> <td> <b>Apellido Paterno </b> </td> <td> <b> Apellido Materno </b> </td></tr>
+
+        @foreach(var item in Model)
+            {
+                if((item.ClaveDivisionMaestros == 1)&&(item.Estatus == true))
+                {
+                    <tr> <td bgcolor="white"> @Html.DisplayFor(modelItem => item.Nombre) </td> <td bgcolor="white"> @Html.DisplayFor(modelItem => item.ApellidoP) </td> <td bgcolor="white"> @Html.DisplayFor(modelItem => item.ApellidoM) </td></tr>
+                }
+            }
+        
+    </table>
+    <br>
+    <br>
+    <br>
+    <h1 id="planes"> Planes de Estudio </h1>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <section class="proyectos_division">
+        <div class="card" style="width:25%; margin:auto; padding:5px; text-align:center">
+            <h5 class="card-header" style="background-color: black; color: #18BF00"> TSU DSM </h5>
+
+            <div class="card-body" padding:20px">
+                <a class="btn btn-success" style="text-decoration: none" href="~/KiscoTIC/dist/CSS/IMG/dsm.jpg" download="Plan de Estudio DSM"> Descargar </a>
+            </div>
+        </div>
+
+        <div class="card" style="width:25%; margin:auto; padding:5px; text-align:center">
+            <h5 class="card-header" style="background-color: black; color: #18BF00"> TSU Entornos Virtuales </h5>
+
+            <div class="card-body" padding:20px">
+                <a class="btn btn-success" style="text-decoration: none" href="~/KiscoTIC/dist/CSS/IMG/entornos.jpg" download="Plan de Estudio Entornos Virtuales"> Descargar </a>
+            </div>
+        </div>
+
+        <div class="card" style="width:25%; margin:auto; padding:5px; text-align:center">
+            <h5 class="card-header" style="background-color: black; color: #18BF00"> TSU Redes Digitales </h5>
+
+            <div class="card-body" padding:20px">
+                <a class="btn btn-success" style="text-decoration: none" href="~/KiscoTIC/dist/CSS/IMG/redes.jpg" download="Plan de Estudio Redes Digitales"> Descargar </a>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>

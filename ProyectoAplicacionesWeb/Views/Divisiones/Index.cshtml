@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ProyectoAplicacionesWeb.Models.Divisione>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Divisiones</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Agregar Nueva División</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoDivisiones)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreDivision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionDivision)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoDivisiones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreDivision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionDivision)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodigoDivisiones">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.CodigoDivisiones">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodigoDivisiones">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

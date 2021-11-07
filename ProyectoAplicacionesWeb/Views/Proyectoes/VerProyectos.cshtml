@@ -1,0 +1,12 @@
+﻿
+@model IEnumerable<ProyectoAplicacionesWeb.Models.Proyecto>
+<h1>Ver Proyectos</h1>
+
+@foreach (var item in Model)
+{
+    <h1> @Html.DisplayFor(modlItem => item.Nombre)</h1>
+    <h3> @Html.DisplayFor(modelItem => item.Descripcion)</h3>
+    <h3> @Html.DisplayFor(modelItem => item.ClaveCarreraProyectosNavigation)</h3>
+    <h3> @Html.DisplayFor(modelItem => item.ClaveDivisionProyectosNavigation)</h3>
+    <img src="~/imagenes/@Html.DisplayFor(modelItem => item.Imagen)" />
+}

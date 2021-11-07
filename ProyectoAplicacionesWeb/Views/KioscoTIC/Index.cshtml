@@ -1,0 +1,140 @@
+﻿@model IEnumerable<ProyectoAplicacionesWeb.Models.Proyecto>
+@{
+    ViewData["Title"] = "Home Page";
+    <link rel="stylesheet" href="~/KiscoTIC/dist/CSS/styles.css" />
+}
+
+<div class="banner">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h1> Nuestros proyectos a tu alcance.</h1>
+    <br><br><br><br><br><br><br><br><br><br>
+    <a asp-controller="KioscoTIC" asp-action="Proyectos">Ver más</a>
+
+</div>
+<div id="container">
+    <div class="ctr_proyectos">
+        <br>
+        <br>
+        <h2> Proyectos más recientes </h2>
+        <hr>
+        <br>
+        <br>
+        <br>
+        @{ int mayor1 = 0;
+            int mayor2 = 0;
+            int mayor3 = 0;
+            int step = 1;
+
+        }
+        @foreach (var item in Model.Reverse())
+        {
+            
+            @if (step == 1)
+            {
+                mayor1 = item.IdProyecto;
+            }
+            @if (step == 2)
+            {
+                mayor2 = item.IdProyecto;
+            }
+            @if (step == 3)
+            {
+                mayor3 = item.IdProyecto;
+            }
+
+            step++;
+        }
+
+
+
+
+        @foreach (var item in Model)
+        {
+
+            @if (item.IdProyecto == mayor1)
+            {
+                <article>
+                    <img src="~/imagenes/@Html.DisplayFor(modlItem => item.Imagen)" width="1800" ; height="150" />
+                    <section id="descripcion">
+                        <h5> @Html.DisplayFor(modlItem => item.Nombre) </h5>
+                        <p>
+                            @Html.DisplayFor(modlItem => item.Descripcion)
+                        </p>
+                        <a class="btn btn-outline-dark" style="text-decoration: none" asp-action="VerProyecto" asp-route-id="@item.IdProyecto"> Ver Proyecto </a>
+                    </section>
+                </article>
+            }
+
+        }
+
+
+        @foreach (var item in Model)
+        {
+
+            @if (item.IdProyecto == mayor2)
+            {
+                <article>
+                    <img src="~/imagenes/@Html.DisplayFor(modlItem => item.Imagen)" width="400" ; height="150" />
+                    <section id="descripcion">
+                        <h5> @Html.DisplayFor(modlItem => item.Nombre) </h5>
+                        <p>
+                            @Html.DisplayFor(modlItem => item.Descripcion)
+                        </p>
+                        <a  class="btn btn-outline-dark" style="text-decoration: none" asp-action="VerProyecto" asp-route-id="@item.IdProyecto"> Ver Proyecto </a>
+                    </section>
+                </article>
+            }
+
+        }
+
+        @foreach (var item in Model)
+        {
+
+            @if (item.IdProyecto == mayor3)
+            {
+                <article>
+                    <img src="~/imagenes/@Html.DisplayFor(modlItem => item.Imagen)" width="400" ; height="150" />
+                    <section id="descripcion">
+                        <h5> @Html.DisplayFor(modlItem => item.Nombre) </h5>
+                        <p>
+                            @Html.DisplayFor(modlItem => item.Descripcion)
+                        </p>
+                        <a class="btn btn-outline-dark" style="text-decoration: none" asp-action="VerProyecto" asp-route-id="@item.IdProyecto"> Ver Proyecto </a>
+                    </section>
+                </article>
+            }
+
+        }
+
+    </div>
+    <br><br>
+    <a asp-controller="KioscoTIC" asp-action="Proyectos"> <div> Ver todos los proyectos</div> </a>
+    <br>
+
+</div>
+<section id="fondo">
+    <a asp-controller="KioscoTIC" asp-action="AcercaDe"><h1> → Conocenos ← </h1></a>
+</section>
+<div id="container1">
+    <div class="carrera">
+        <h2> Nuestras Divisiones </h2>
+        <hr>
+        <br>
+        <br>
+        <br>
+        <section id="section_DSM">
+            <a asp-controller="KioscoTIC" asp-action="DivisionTIC">Ver división </a>
+            <h1> TIC. </h1>
+        </section>
+        <br>
+        <br>
+        <section id="section_Redes">
+            <a asp-controller="KioscoTIC" asp-action="DivisionIND">Ver división </a>
+            <h1> Industrial. </h1>
+
+        </section>
+        <br>
+        <a asp-controller="KioscoTIC" asp-action="Divisiones"> <div> Ver todas las divisiones </div> </a>
+    </div>
+
+</div>

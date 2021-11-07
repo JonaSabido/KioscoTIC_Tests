@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(IMG/fondo_intermedio.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+nav{
+    width: 100%;
+    height: auto;
+    background-color: #00C605;
+    box-shadow: 0px 0px 20px black;
+}
+nav li{
+    padding: 18px;
+    display: inline-block;
+    border-bottom: 4px #00C605 solid;
+}
+ul{
+    text-align:right;
+    width: 80%;
+    
+}
+nav img{
+    width: 6%;
+    float: left;
+    margin-left: 21%;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 80%;
+    display: inline-block;
+    
+}
+nav li:hover{
+    border-bottom: 4px black solid;
+}
+nav a:hover{
+    color: white;
+}
+footer{
+    background-color: #00C605;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    text-align: right;
+    margin-top: 10%;
+}
+footer h3{
+    color: white;
+    text-decoration: none;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 80%;
+}
+#containerAcercaDe {
+    height: auto;
+    width: 100%;
+    padding: 100px;
+}
+#containerAcercaDe h1 {
+    color: white;
+    padding: 20px;
+}
+    #containerAcercaDe hr {
+        color: white;
+        width: 100%;
+    }
+    #containerAcercaDe p {
+        color: white;
+        font-size: 140%;
+        text-align: justify;
+    }

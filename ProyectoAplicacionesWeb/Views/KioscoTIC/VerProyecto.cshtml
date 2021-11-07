@@ -1,0 +1,52 @@
+﻿@model ProyectoAplicacionesWeb.Models.Proyecto
+@{
+    ViewData["Title"] = "VerProyecto";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+
+    <link rel="stylesheet" href="~/KiscoTIC/dist/CSS/VerProyecto.css" type="text/css">
+
+}
+
+<div id="container">
+    <h1>
+        @Html.DisplayFor(model => model.Nombre)
+
+    </h1>
+    <hr>
+    <br>
+    <br>
+    <img src="~/imagenes/@Html.DisplayFor(model => model.Imagen)">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>
+        Descripción
+    </h2>
+    <p>
+        @Html.DisplayFor(model => model.Descripcion)
+    </p>
+    <br>
+    <br>
+    <h2> División </h2>
+    <p>@Html.DisplayFor(model => model.ClaveDivisionProyectosNavigation.NombreDivision) </p>
+    <br>
+    <br>
+    <h2> Carrera </h2>
+    <p>@Html.DisplayFor(model => model.ClaveCarreraProyectosNavigation.NombreCarrera) </p>
+    <br />
+    <br />
+    <h2> Grado y Grupo </h2>
+    <p>@Html.DisplayFor(model => model.ClaveGradoProyectosNavigation.Grado1)° "@Html.DisplayFor(model => model.ClaveGrupoProyectosNavigation.Grupo1)" </p>
+    <br />
+    <br />
+    <h2> Video del Proyecto </h2>
+    <br />
+    <div class="galeria">
+        @{ string link = Model.Video;}
+        
+        <center> @Html.Raw(link) </center>
+    </div>
+</div>
+

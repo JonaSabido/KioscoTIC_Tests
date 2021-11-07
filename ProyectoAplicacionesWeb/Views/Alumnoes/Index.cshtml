@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ProyectoAplicacionesWeb.Models.Alumno>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Alumnos</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Agregar Nuevo Alumno</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidoM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClaveCarreraAlumno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClaveDivisionAlumno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClaveGradoAlumnos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClaveGrupoAlumnos)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClaveCarreraAlumnoNavigation.NombreCarrera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClaveDivisionAlumnoNavigation.DescripcionDivision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClaveGradoAlumnosNavigation.Grado1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClaveGrupoAlumnosNavigation.Grupo1)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MatriculaAlumno">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.MatriculaAlumno">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.MatriculaAlumno">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
