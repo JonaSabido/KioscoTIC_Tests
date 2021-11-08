@@ -135,7 +135,7 @@ namespace KioscoTIC.Controllers
         {
             var Cuenta = _context.Usuarios.Where(p => p.Correo == Cor && p.Contraseña == Contra).FirstOrDefault<Usuario>();
 
-            if (Cuenta != null)
+            if (Cuenta != null && Cuenta.Estatus == true)
             {
                 return true;
             }
