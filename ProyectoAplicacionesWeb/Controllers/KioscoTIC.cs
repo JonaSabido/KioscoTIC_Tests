@@ -131,12 +131,13 @@ namespace KioscoTIC.Controllers
 
 
         }
-        public bool VerificarCuenta(string Cor, string Contra)
+        public bool LoginSession(string Cor, string Contra)
         {
             var Cuenta = _context.Usuarios.Where(p => p.Correo == Cor && p.Contraseña == Contra).FirstOrDefault<Usuario>();
 
             if (Cuenta != null && Cuenta.Estatus == true)
             {
+                
                 return true;
             }
             else

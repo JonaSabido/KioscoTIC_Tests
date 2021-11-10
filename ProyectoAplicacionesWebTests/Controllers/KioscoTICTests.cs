@@ -22,7 +22,7 @@ namespace KioscoTIC.Controllers.Tests
             //Act
             Kiosco_UTM_FINALContext contexto = new Kiosco_UTM_FINALContext();
             KioscoTIC kiosco = new KioscoTIC(contexto);
-            bool bandera = kiosco.VerificarCuenta(Cor, Contra);
+            bool bandera = kiosco.LoginSession(Cor, Contra);
 
             //Assert
             Assert.AreEqual(excepted, bandera);
@@ -35,7 +35,7 @@ namespace KioscoTIC.Controllers.Tests
             //Act
             Kiosco_UTM_FINALContext contexto = new Kiosco_UTM_FINALContext();
             KioscoTIC kiosco = new KioscoTIC(contexto);
-            bool bandera = kiosco.VerificarCuenta(Cor, Contra);
+            bool bandera = kiosco.LoginSession(Cor, Contra);
 
             //Assert
             Assert.AreEqual(excepted, bandera);
@@ -48,7 +48,7 @@ namespace KioscoTIC.Controllers.Tests
             //Act
             Kiosco_UTM_FINALContext contexto = new Kiosco_UTM_FINALContext();
             KioscoTIC kiosco = new KioscoTIC(contexto);
-            bool bandera = kiosco.VerificarCuenta(Cor, Contra);
+            bool bandera = kiosco.LoginSession(Cor, Contra);
 
             //Assert
             Assert.AreEqual(excepted, bandera);
@@ -61,7 +61,7 @@ namespace KioscoTIC.Controllers.Tests
             //Act
             Kiosco_UTM_FINALContext contexto = new Kiosco_UTM_FINALContext();
             KioscoTIC kiosco = new KioscoTIC(contexto);
-            bool bandera = kiosco.VerificarCuenta(Cor, Contra);
+            bool bandera = kiosco.LoginSession(Cor, Contra);
 
             //Assert
             Assert.AreEqual(excepted, bandera);
@@ -74,7 +74,7 @@ namespace KioscoTIC.Controllers.Tests
             //Act
             Kiosco_UTM_FINALContext contexto = new Kiosco_UTM_FINALContext();
             KioscoTIC kiosco = new KioscoTIC(contexto);
-            bool bandera = kiosco.VerificarCuenta(Cor, Contra);
+            bool bandera = kiosco.LoginSession(Cor, Contra);
 
             //Assert
             Assert.AreEqual(excepted, bandera);
@@ -87,7 +87,7 @@ namespace KioscoTIC.Controllers.Tests
             //Act
             Kiosco_UTM_FINALContext contexto = new Kiosco_UTM_FINALContext();
             KioscoTIC kiosco = new KioscoTIC(contexto);
-            bool bandera = kiosco.VerificarCuenta(Cor, Contra);
+            bool bandera = kiosco.LoginSession(Cor, Contra);
 
             //Assert
             Assert.AreEqual(excepted, bandera);
@@ -100,7 +100,7 @@ namespace KioscoTIC.Controllers.Tests
             //Act
             Kiosco_UTM_FINALContext contexto = new Kiosco_UTM_FINALContext();
             KioscoTIC kiosco = new KioscoTIC(contexto);
-            bool bandera = kiosco.VerificarCuenta(Cor, Contra);
+            bool bandera = kiosco.LoginSession(Cor, Contra);
 
             //Assert
             Assert.AreEqual(excepted, bandera);
@@ -113,7 +113,7 @@ namespace KioscoTIC.Controllers.Tests
             //Act
             Kiosco_UTM_FINALContext contexto = new Kiosco_UTM_FINALContext();
             KioscoTIC kiosco = new KioscoTIC(contexto);
-            bool bandera = kiosco.VerificarCuenta(Cor, Contra);
+            bool bandera = kiosco.LoginSession(Cor, Contra);
 
             //Assert
             Assert.AreEqual(excepted, bandera);

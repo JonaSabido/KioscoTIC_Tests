@@ -57,11 +57,52 @@ namespace ProyectoAplicacionesWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(usuario);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (FindCorreoValido(usuario.Correo))
+                {
+                    _context.Add(usuario);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
+
             return View(usuario);
+        }
+        public bool FindCorreoValido(string Correo)
+        {
+            bool banderaarroba = false;
+            bool banderatexto = false;
+
+            if (Correo != null)
+            {
+                char[] arreglo = Correo.ToCharArray();
+                for (int i = 0; i < Correo.Length; i++)
+                {
+                    if (banderaarroba == false)
+                    {
+                        if (arreglo[i] == '@')
+                        {
+                            banderaarroba = true;
+                        }
+                    }
+                    else
+                    {
+                        banderatexto = true;
+                    }
+                }
+
+                if (banderaarroba == true && banderatexto == true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
         // GET: Usuarios1/Edit/5
