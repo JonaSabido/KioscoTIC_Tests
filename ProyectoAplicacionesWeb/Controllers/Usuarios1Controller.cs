@@ -57,7 +57,7 @@ namespace ProyectoAplicacionesWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (FindCorreoValido(usuario.Correo))
+                if (FindCorreoValido(usuario.Correo) && TextWithoutNumbers(usuario.Nombre) && TextWithoutNumbers(usuario.ApellidoP) && TextWithoutNumbers(usuario.ApellidoM))
                 {
                     _context.Add(usuario);
                     await _context.SaveChangesAsync();
@@ -67,6 +67,36 @@ namespace ProyectoAplicacionesWeb.Controllers
 
             return View(usuario);
         }
+        public bool TextWithoutNumbers(string text)
+        {
+            bool bandera = false;
+            if (text != null)
+            {
+                char[] arreglo = text.ToCharArray();
+                for (int i = 0; i < text.Length; i++)
+                {
+                    if(arreglo[i] == '0' || arreglo[i] == '1' || arreglo[i] == '2' || arreglo[i] == '3' || arreglo[i] == '4' || arreglo[i] == '5' || arreglo[i] == '6' || arreglo[i] == '7' || arreglo[i] == '8' || arreglo[i] == '9')
+                    {
+                        bandera = false;
+                        break;
+                    }
+                    else
+                    {
+                        bandera = true;
+                    }
+                }
+            }
+
+            if(bandera == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public bool FindCorreoValido(string Correo)
         {
             bool banderaarroba = false;
@@ -104,6 +134,7 @@ namespace ProyectoAplicacionesWeb.Controllers
                 return false;
             }
         }
+
 
         // GET: Usuarios1/Edit/5
         public async Task<IActionResult> Edit(string id)

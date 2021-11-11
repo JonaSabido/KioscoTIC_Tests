@@ -18,14 +18,14 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
             //Arrange
             Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
             Usuarios1Controller usuario = new Usuarios1Controller(conext);
-            int excepted = 13;
+            bool excepted = false;
             var newUsuario = new Usuario() { Correo = "user1@hotmail.com", Nombre = "Sergio", ApellidoP = "Perez", ApellidoM = "Salazar", Estatus = true, Contraseña = "123" };
 
             //Act
-            var respuesta = usuario.Create(newUsuario);
+            var respuesta0 = usuario.Create(newUsuario);
 
             //Assert
-            Assert.AreEqual(excepted, respuesta.Id);
+            Assert.AreEqual(excepted, respuesta0.IsCompleted);
             
         }
 
@@ -35,35 +35,35 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
             //Arrange
             Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
             Usuarios1Controller usuario = new Usuarios1Controller(conext);
-            int excepted = 1;
-            var newUsuario = new Usuario() { Correo = "user1@hotmail.com", Nombre = "Sergio", ApellidoP = "Perez", ApellidoM = "Salazar", Estatus = true, Contraseña = "123" };
+            bool excepted = true;
+            var newUsuario = new Usuario() { Correo = null, Nombre = null, ApellidoP = null, ApellidoM = null, Estatus = null, Contraseña = null };
 
             //Act
-            var respuesta = usuario.Create(newUsuario);
+            var respuesta1 = usuario.Create(newUsuario);
 
             //Assert
-            Assert.AreEqual(excepted, respuesta.Id);
+            Assert.AreEqual(excepted, respuesta1.IsCompleted);
 
         }
 
-        /*
+        
         [TestMethod()]
-        public void CreateTest2_NoDeberiaCrearseElUsuarioPorQueCampoEstatusNoEsValido()
+        public void CreateTest2_NoDeberiaCrearseElUsuarioPorQueEnLosCamposHayNumeros()
         {
             //Arrange
             Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
             Usuarios1Controller usuario = new Usuarios1Controller(conext);
-            int excepted = 1;
-            var newUsuario = new Usuario() { Correo = "user1@hotmail.com", Nombre = "Sergio", ApellidoP = "Perez", ApellidoM = "Salazar", Estatus = "hola", Contraseña = "123" };
+            bool excepted = true;
+            var newUsuario = new Usuario() { Correo = "user1@hotmail.com", Nombre = "Serg10", ApellidoP = "Per3z", ApellidoM = "Sal4z4r", Estatus = true, Contraseña = "123" };
 
             //Act
             var respuesta = usuario.Create(newUsuario);
 
             //Assert
-            Assert.AreEqual(excepted, respuesta.Id);
+            Assert.AreEqual(excepted, respuesta.IsCompleted);
 
         }
-        */
+        
 
 
         [TestMethod()]
@@ -79,7 +79,7 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
             //Act
             if (usuario.FindCorreoValido(newUsuario.Correo))
             {
-                var respuesta = usuario.Create(newUsuario);
+                var respuesta2 = usuario.Create(newUsuario);
             }
             else
             {
@@ -90,5 +90,24 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
             Assert.AreEqual(excepted, correovalido);
 
         }
+
+        [TestMethod()]
+        public void CreateTest4_NoDeberiaCrearseElUsuarioPorqueRegresamosAlIndex()
+        {
+            //Arrange
+            Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
+            Usuarios1Controller usuario = new Usuarios1Controller(conext);
+            bool excepted = false;
+            var newUsuario = new Usuario() { Correo = "user1@hotmail.com", Nombre = "Sergio", ApellidoP = "Perez", ApellidoM = "Salazar", Estatus = true, Contraseña = "123" };
+
+            //Act
+            var respuesta3 = usuario.Index();
+
+            //Assert
+            Assert.AreEqual(excepted, respuesta3.IsCompleted);
+
+        }
+
+        
     }
 }
