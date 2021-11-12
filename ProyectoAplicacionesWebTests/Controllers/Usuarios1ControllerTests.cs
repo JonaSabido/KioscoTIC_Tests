@@ -6,6 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ProyectoAplicacionesWeb.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace ProyectoAplicacionesWeb.Controllers.Tests
 {
@@ -18,14 +22,14 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
             //Arrange
             Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
             Usuarios1Controller usuario = new Usuarios1Controller(conext);
-            bool excepted = false;
-            var newUsuario = new Usuario() { Correo = "user1@hotmail.com", Nombre = "Sergio", ApellidoP = "Perez", ApellidoM = "Salazar", Estatus = true, Contraseña = "123" };
+            string excepted = "Index";
+            var newUsuario = new Usuario() { Correo = "user12111@hotmail.com", Nombre = "Sergio", ApellidoP = "Perez", ApellidoM = "Salazar", Estatus = true, Contraseña = "123" };
 
             //Act
-            var respuesta0 = usuario.Create(newUsuario);
+            var actionResult = usuario.Create(newUsuario).Result as RedirectToActionResult;
 
             //Assert
-            Assert.AreEqual(excepted, respuesta0.IsCompleted);
+            Assert.AreEqual(actionResult.ActionName, excepted);
             
         }
 
@@ -35,14 +39,13 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
             //Arrange
             Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
             Usuarios1Controller usuario = new Usuarios1Controller(conext);
-            bool excepted = true;
             var newUsuario = new Usuario() { Correo = null, Nombre = null, ApellidoP = null, ApellidoM = null, Estatus = null, Contraseña = null };
 
             //Act
-            var respuesta1 = usuario.Create(newUsuario);
+            var actionResult = usuario.Create(newUsuario).Result as ViewResult;
 
             //Assert
-            Assert.AreEqual(excepted, respuesta1.IsCompleted);
+            Assert.IsInstanceOfType(actionResult, typeof(ViewResult));
 
         }
 
@@ -53,14 +56,13 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
             //Arrange
             Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
             Usuarios1Controller usuario = new Usuarios1Controller(conext);
-            bool excepted = true;
             var newUsuario = new Usuario() { Correo = "user1@hotmail.com", Nombre = "Serg10", ApellidoP = "Per3z", ApellidoM = "Sal4z4r", Estatus = true, Contraseña = "123" };
 
             //Act
-            var respuesta = usuario.Create(newUsuario);
+            var actionResult = usuario.Create(newUsuario).Result as ViewResult;
 
             //Assert
-            Assert.AreEqual(excepted, respuesta.IsCompleted);
+            Assert.IsInstanceOfType(actionResult, typeof(ViewResult));
 
         }
         
@@ -72,22 +74,13 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
             //Arrange
             Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
             Usuarios1Controller usuario = new Usuarios1Controller(conext);
-            bool excepted = false;
-            bool correovalido = true;
             var newUsuario = new Usuario() { Correo = "example", Nombre = "Sergio", ApellidoP = "Perez", ApellidoM = "Salazar", Estatus = true, Contraseña = "123" };
 
             //Act
-            if (usuario.FindCorreoValido(newUsuario.Correo))
-            {
-                var respuesta2 = usuario.Create(newUsuario);
-            }
-            else
-            {
-                correovalido = false;
-            }
+            var actionResult = usuario.Create(newUsuario).Result as ViewResult;
 
             //Assert
-            Assert.AreEqual(excepted, correovalido);
+            Assert.IsInstanceOfType(actionResult, typeof(ViewResult));
 
         }
 
@@ -97,14 +90,14 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
             //Arrange
             Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
             Usuarios1Controller usuario = new Usuarios1Controller(conext);
-            bool excepted = false;
+            string excepted = "Index";
             var newUsuario = new Usuario() { Correo = "user1@hotmail.com", Nombre = "Sergio", ApellidoP = "Perez", ApellidoM = "Salazar", Estatus = true, Contraseña = "123" };
 
             //Act
-            var respuesta3 = usuario.Index();
+            var actionResult = usuario.Index().Result as ViewResult;
 
             //Assert
-            Assert.AreEqual(excepted, respuesta3.IsCompleted);
+            Assert.AreEqual(excepted, actionResult.ViewName);
 
         }
 

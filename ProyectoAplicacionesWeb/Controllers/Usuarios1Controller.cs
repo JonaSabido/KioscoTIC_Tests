@@ -21,7 +21,7 @@ namespace ProyectoAplicacionesWeb.Controllers
         // GET: Usuarios1
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Usuarios.ToListAsync());
+            return View("Index", await _context.Usuarios.ToListAsync());
         }
 
         // GET: Usuarios1/Details/5
