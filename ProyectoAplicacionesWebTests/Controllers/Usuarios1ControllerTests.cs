@@ -20,28 +20,27 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
         public void CreateTest0_DeberiaCrearseElUsuarioPorqueTodosLosCamposEstanLlenos()
         {
             //Arrange
-            Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
-            Usuarios1Controller usuario = new Usuarios1Controller(conext);
-            string excepted = "Index";
             var newUsuario = new Usuario() { Correo = "user12111@hotmail.com", Nombre = "Sergio", ApellidoP = "Perez", ApellidoM = "Salazar", Estatus = true, Contraseña = "123" };
+            string excepted = "Index";
 
             //Act
+            Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
+            Usuarios1Controller usuario = new Usuarios1Controller(conext);
             var actionResult = usuario.Create(newUsuario).Result as RedirectToActionResult;
 
             //Assert
             Assert.AreEqual(actionResult.ActionName, excepted);
-            
         }
 
         [TestMethod()]
         public void CreateTest1_NoDeberiaCrearseElUsuarioPorQueTodosLosCamposEstanVacios()
         {
             //Arrange
-            Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
-            Usuarios1Controller usuario = new Usuarios1Controller(conext);
             var newUsuario = new Usuario() { Correo = null, Nombre = null, ApellidoP = null, ApellidoM = null, Estatus = null, Contraseña = null };
 
             //Act
+            Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
+            Usuarios1Controller usuario = new Usuarios1Controller(conext);
             var actionResult = usuario.Create(newUsuario).Result as ViewResult;
 
             //Assert
@@ -54,11 +53,11 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
         public void CreateTest2_NoDeberiaCrearseElUsuarioPorQueEnLosCamposHayNumeros()
         {
             //Arrange
-            Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
-            Usuarios1Controller usuario = new Usuarios1Controller(conext);
             var newUsuario = new Usuario() { Correo = "user1@hotmail.com", Nombre = "Serg10", ApellidoP = "Per3z", ApellidoM = "Sal4z4r", Estatus = true, Contraseña = "123" };
 
             //Act
+            Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
+            Usuarios1Controller usuario = new Usuarios1Controller(conext);
             var actionResult = usuario.Create(newUsuario).Result as ViewResult;
 
             //Assert
@@ -72,11 +71,11 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
         public void CreateTest3_DeberiaNoCrearseElUsuarioPorqueElCampoCorreoNoEsValido()
         {
             //Arrange
-            Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
-            Usuarios1Controller usuario = new Usuarios1Controller(conext);
             var newUsuario = new Usuario() { Correo = "example", Nombre = "Sergio", ApellidoP = "Perez", ApellidoM = "Salazar", Estatus = true, Contraseña = "123" };
 
             //Act
+            Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
+            Usuarios1Controller usuario = new Usuarios1Controller(conext);
             var actionResult = usuario.Create(newUsuario).Result as ViewResult;
 
             //Assert
@@ -88,12 +87,12 @@ namespace ProyectoAplicacionesWeb.Controllers.Tests
         public void CreateTest4_NoDeberiaCrearseElUsuarioPorqueRegresamosAlIndex()
         {
             //Arrange
-            Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
-            Usuarios1Controller usuario = new Usuarios1Controller(conext);
-            string excepted = "Index";
             var newUsuario = new Usuario() { Correo = "user1@hotmail.com", Nombre = "Sergio", ApellidoP = "Perez", ApellidoM = "Salazar", Estatus = true, Contraseña = "123" };
+            string excepted = "Index";
 
             //Act
+            Kiosco_UTM_FINALContext conext = new Kiosco_UTM_FINALContext();
+            Usuarios1Controller usuario = new Usuarios1Controller(conext);
             var actionResult = usuario.Index().Result as ViewResult;
 
             //Assert
